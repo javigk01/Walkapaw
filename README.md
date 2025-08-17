@@ -32,10 +32,11 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
   
   
   ### [Felipe Romero]
-  <img src="(https://github.com/javigk01/Walkapaw/blob/main/images/foto.jpg)" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
-  
-  **Rol:** Frontend Developer  
-  **Descripción:** Especialista en desarrollo de interfaces móviles con experiencia en React Native y diseño UX/UI. Apasionado por crear experiencias de usuario intuitivas y atractivas.
+<img src="https://github.com/javigk01/Walkapaw/blob/main/images/foto.jpg?raw=true" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
+
+**Rol:** Frontend Developer  
+**Biografía:** Soy estudiante de Ingeniería de Sistemas y Electrónica en la Universidad Javeriana de Bogotá, con un fuerte interés en bioingeniería y tecnología aeroespacial. Me especializo en desarrollo de interfaces móviles utilizando React Native y en diseño UX/UI, buscando siempre crear experiencias de usuario intuitivas y atractivas. He participado en el semillero VEX Robotics, lo que me ha permitido fortalecer habilidades en robótica, innovación y trabajo colaborativo en proyectos tecnológicos.
+
   
 </div>
 
