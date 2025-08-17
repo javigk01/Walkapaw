@@ -10,12 +10,14 @@
 segura. Permite publicar solicitudes, recibir ofertas personalizadas y hacer seguimiento en tiempo real,
 integrando geolocalización, calificaciones y notificaciones para ofrecer una experiencia confiable y conveniente.</p>
 
-<h2>Casos de Uso</h2>
+<div align="center">
+  <h2>Casos de Uso</h2>
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/DiagramaCasosDeUso.png?raw=true" alt="image">
+</div>
 
-<img src="https://github.com/javigk01/Walkapaw/blob/main/DiagramaCasosDeUso.png?raw=true" alt="image">
-
+<div align="center">
 <h2>Diagrama de Clases</h2>
+</div>
 
 <h2>Mockups</h2>
-
 <p>A continuación se presentan algunos mockups que muestran la interfaz de usuario y funcionalidades clave de Walkapaw:</p>
