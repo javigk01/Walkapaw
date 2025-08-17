@@ -1,4 +1,5 @@
 # Walkapaw
+<img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="30px" width="30px">
 
 cuidadores de confianza, colitas felices.
 
@@ -13,3 +14,7 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 <img src="https://github.com/javigk01/Walkapaw/blob/main/DiagramaCasosDeUso.png?raw=true" alt="image">
 
 ## Diagrama de Clases
+
+## Mockups
+
+A continuación se presentan algunos mockups que muestran la interfaz de usuario y funcionalidades clave de Walkapaw:
