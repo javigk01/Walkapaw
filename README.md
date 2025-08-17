@@ -10,6 +10,6 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 
 ## Casos de Uso
 
-<img src="https://github.com/javigk01/Walkapaw/blob/main/DiagramaCasosDeUso.png?raw=true" alt="image" width="500" height="350">
+<img src="https://github.com/javigk01/Walkapaw/blob/main/DiagramaCasosDeUso.png?raw=true" alt="image">
 
 ## Diagrama de Clases
