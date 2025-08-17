@@ -1,5 +1,5 @@
 # Walkapaw
-<img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="100px" width="100px">
+<img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
 
 cuidadores de confianza, colitas felices.
 
