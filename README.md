@@ -1,7 +1,8 @@
-# Walkapaw
-<img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
-
-cuidadores de confianza, colitas felices.
+<div align="center">
+  # Walkapaw
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
+  cuidadores de confianza, colitas felices.
+</div>
 
 ## Descripción del Proyecto
 
