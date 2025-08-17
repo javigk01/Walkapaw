@@ -25,21 +25,21 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 
 <div align="center">
   
-  ### [Nombre del Desarrollador 1]
+  ### [Javier Aldana]
   <img src="https://via.placeholder.com/150x150/4CAF50/white?text=Foto" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
   
   **Rol:** Frontend Developer  
   **Descripción:** Especialista en desarrollo de interfaces móviles con experiencia en React Native y diseño UX/UI. Apasionado por crear experiencias de usuario intuitivas y atractivas.
   
   
-  ### [Nombre del Desarrollador 2]
+  ### [Daniel Avila]
   <img src="https://via.placeholder.com/150x150/4CAF50/white?text=Foto" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
   
   **Rol:** Frontend Developer  
   **Descripción:** Especialista en desarrollo de interfaces móviles con experiencia en React Native y diseño UX/UI. Apasionado por crear experiencias de usuario intuitivas y atractivas.
   
   
-  ### [Nombre del Desarrollador 3]
+  ### [Felipe Romero]
   <img src="https://via.placeholder.com/150x150/4CAF50/white?text=Foto" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
   
   **Rol:** Frontend Developer  
