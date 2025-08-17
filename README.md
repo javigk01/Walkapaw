@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Walkapaw</h1>
-  <img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
   <h2>cuidadores de confianza, colitas felices.</h2>
 </div>
 
@@ -12,7 +12,7 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 
 <div align="center">
   <h2>Casos de Uso</h2>
-  <img src="https://github.com/javigk01/Walkapaw/blob/main/DiagramaCasosDeUso.png?raw=true" alt="image">
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/DiagramaCasosDeUso.png?raw=true" alt="image">
 </div>
 
 <div align="center">
