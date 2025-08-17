@@ -1,7 +1,7 @@
 <div align="center">
-  # Walkapaw
+  <h1>Walkapaw</h1>
   <img src="https://github.com/javigk01/Walkapaw/blob/main/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
-  cuidadores de confianza, colitas felices.
+  <h2>cuidadores de confianza, colitas felices.</h2>
 </div>
 
 ## Descripción del Proyecto
