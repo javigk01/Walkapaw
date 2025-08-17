@@ -11,16 +11,8 @@ segura. Permite publicar solicitudes, recibir ofertas personalizadas y hacer seg
 integrando geolocalización, calificaciones y notificaciones para ofrecer una experiencia confiable y conveniente.</p>
 
 <div align="center">
-  <h2>Casos de Uso</h2>
-  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/DiagramaCasosDeUso.png?raw=true" alt="image">
-</div>
-
-<div align="center">
-<h2>Diagrama de Clases</h2>
-</div>
-
-<div align="center">
   <h2>Nuestro Equipo</h2>
+  <h3>Android Studio y Fe</h3>
 </div>
 
 <div align="center">
@@ -45,6 +37,15 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
   **Rol:** Frontend Developer  
   **Descripción:** Especialista en desarrollo de interfaces móviles con experiencia en React Native y diseño UX/UI. Apasionado por crear experiencias de usuario intuitivas y atractivas.
   
+</div>
+
+<div align="center">
+  <h2>Casos de Uso</h2>
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/DiagramaCasosDeUso.png?raw=true" alt="image">
+</div>
+
+<div align="center">
+<h2>Diagrama de Clases</h2>
 </div>
 
 <h2>Mockups</h2>
