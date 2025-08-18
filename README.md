@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Walkapaw</h1>
   <img src="https://github.com/javigk01/Walkapaw/blob/main/images/WalkapawLogo.png?raw=true" alt="image" heiht="250px" width="250px">
-  <h2>cuidadores de confianza, colitas felices.</h2>
+  <h2>Cuidadores de confianza, colitas felices.</h2>
 </div>
 
 <h2>Descripción del Proyecto</h2>
@@ -25,7 +25,7 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
   
   
   ### [Daniel Avila]
-  <img src="https://via.placeholder.com/150x150/4CAF50/white?text=Foto" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/daniel.jpg?raw=true" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
   
   **Rol:** Backend Developer  
   **Descripción:** Especialista en desarrollo de interfaces móviles con experiencia en React Native y diseño UX/UI. Apasionado por crear experiencias de usuario intuitivas y atractivas.
@@ -44,6 +44,8 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 <div align="center">
   <h2>Casos de Uso</h2>
   <img src="https://github.com/javigk01/Walkapaw/blob/main/images/DiagramaCasosDeUso.png?raw=true" alt="image">
+  <h2>Diagrama de Clases</h2>
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/WalkaPaw-1stClassDiagram.png?raw=true" alt="image">
 </div>
 
 <div align="center">
