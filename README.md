@@ -32,7 +32,7 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
   
   
   ### [Felipe Romero]
-<img src="https://github.com/javigk01/Walkapaw/blob/main/images/foto_felipe.jpg?raw=true" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
+<img src="https://github.com/javigk01/Walkapaw/blob/main/images/foto_felipe_fix.jpg?raw=true" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
 
 **Rol:** Backend Developer  
 **Biografía:** Soy estudiante de Ingeniería de Sistemas y Electrónica en la Universidad Javeriana de Bogotá, con un fuerte interés en bioingeniería y tecnología aeroespacial. Tengo experiencia trabajando con React y me apasiona la aplicación de la inteligencia artificial en robótica. He participado en el semillero VEX Robotics, lo que me ha permitido fortalecer habilidades en robótica, innovación y trabajo colaborativo en proyectos tecnológicos.
