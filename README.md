@@ -48,7 +48,6 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 <div align="center">
   <h2>Diagrama de Clases</h2>
   <img src="https://github.com/javigk01/Walkapaw/blob/main/images/WalkaPaw-1stClassDiagram.png?raw=true" alt="image">
-<h2>Diagrama de Clases</h2>
 </div>
 
 <h2>Mockups</h2>
