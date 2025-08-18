@@ -18,7 +18,7 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
 <div align="center">
   
   ### [Javier Aldana]
-  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/foto_javier.jpg?raw=true" alt="Foto del desarrollador" width="659px" height="880px" style="border-radius: 50%;">
+  <img src="https://github.com/javigk01/Walkapaw/blob/main/images/foto_javier.jpg?raw=true" alt="Foto del desarrollador" width="200px" height="267px" style="border-radius: 50%;">
   
   **Rol:** Frontend Developer  
   **Descripción:** Estudiante de Ingeniería de Sistemas en la Pontificia Universidad Javeriana. Me apasiona el desarrollo web, el internet de las cosas, y el desarrollo de inteligencia artificial. Me caracterizo por crear experiencias de usuario intuitivas y atractivas, y por manejar un grandioso trabajo en equipo con cualquier persona. Tengo un tecnico en programación de software que me ha permitido mejorar mis habilidades de desarrollo y conocer nuevas herramientas para este mismo fin.
