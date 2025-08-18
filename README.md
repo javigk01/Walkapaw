@@ -27,9 +27,8 @@ integrando geolocalización, calificaciones y notificaciones para ofrecer una ex
   ### [Daniel Avila]
   <img src="https://github.com/javigk01/Walkapaw/blob/main/images/daniel.jpg?raw=true" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
   
-  **Rol:** Backend Developer  
-  **Descripción:** Especialista en desarrollo de interfaces móviles con experiencia en React Native y diseño UX/UI. Apasionado por crear experiencias de usuario intuitivas y atractivas.
-  
+  **Rol:** Arquitecto de Software  
+  **Descripción:** Me gusta diseñar la arquitectura de la mayoría de proyectos en los que trabajo, me apasiona el desarrollo movil y me gustaría aprender muchas cosas mas durante este semestre!
   
   ### [Felipe Romero]
 <img src="https://github.com/javigk01/Walkapaw/blob/main/images/foto_felipe_fix.jpg?raw=true" alt="Foto del desarrollador" width="150px" height="150px" style="border-radius: 50%;">
