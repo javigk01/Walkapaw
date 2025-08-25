@@ -10,7 +10,7 @@
         android:id="@+id/logoWalkapaw"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/walkapaw_logo"
+        android:src="@drawable/ic_walkapawlogo"
         android:contentDescription="Logo Walkapaw"
         android:layout_marginBottom="28dp"/>
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Iniciar Sesión"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#00BCD4"
+        android:backgroundTint="@color/color_primario"
         android:layout_marginBottom="14dp"/>
 
     <Button
@@ -48,6 +48,6 @@
         android:layout_height="wrap_content"
         android:text="Registrar Cuenta"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#00BCD4"/>
+        android:backgroundTint="@color/color_primario"/>
 
 </LinearLayout>

@@ -2,49 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <!-- Header con logo y usuario -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
         android:gravity="center_vertical"
-        android:background="@color/primary_color">
+        android:background="@color/color_primario">
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/walkapaw_logo" />
+            android:src="@drawable/ic_walkapawlogo"
+            app:tint="@color/blanco"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Walkapaw"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="12dp" />
-
-        <ImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_user"
-            android:background="@drawable/circle_background" />
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="WalkaPaw"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/blanco"-->
+<!--            android:layout_marginStart="12dp" />-->
 
     </LinearLayout>
 
-    <!-- Contenido principal que cambia según la tab -->
     <FrameLayout
         android:id="@+id/frameContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- Bottom Navigation estilo Uber -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -66,7 +58,8 @@
                 android:id="@+id/ivSolicitar"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_walk" />
+                android:src="@drawable/ic_walk"
+                app:tint="@color/color_primario"/>
 
             <TextView
                 android:id="@+id/tvSolicitar"
@@ -74,7 +67,8 @@
                 android:layout_height="wrap_content"
                 android:text="Solicitar"
                 android:textSize="12sp"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_primario"/>
 
         </LinearLayout>
 
@@ -92,7 +86,8 @@
                 android:id="@+id/ivActividad"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_history" />
+                android:src="@drawable/ic_history"
+                app:tint = "@color/color_primario"/>
 
             <TextView
                 android:id="@+id/tvActividad"
@@ -100,7 +95,8 @@
                 android:layout_height="wrap_content"
                 android:text="Actividad"
                 android:textSize="12sp"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_primario"/>
 
         </LinearLayout>
 
@@ -118,7 +114,8 @@
                 android:id="@+id/ivCuenta"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_account" />
+                android:src="@drawable/ic_account"
+                app:tint = "@color/color_primario"/>
 
             <TextView
                 android:id="@+id/tvCuenta"
@@ -126,7 +123,8 @@
                 android:layout_height="wrap_content"
                 android:text="Cuenta"
                 android:textSize="12sp"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_primario"/>
 
         </LinearLayout>
 

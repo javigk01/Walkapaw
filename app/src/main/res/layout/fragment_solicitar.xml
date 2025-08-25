@@ -2,55 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="bottom"
+    android:background="@drawable/map_placeholder">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Necesitas un paseo para tu perro?"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/formCard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="0dp"
+        app:cardUseCompatPadding="false"
+        app:cardBackgroundColor="@color/blanco">
 
     <Button
         android:id="@+id/btnSolicitarPaseo"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Solicitar Paseo"
-        android:textSize="18sp"
-        android:backgroundTint="@color/primary_color"
-        android:layout_marginBottom="16dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Servicios Disponibles"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:layout_gravity="center"
+        android:text="Solicitar Paseo Nuevo"
+        android:textSize="18sp"
+        android:backgroundTint="@color/color_primario"
+        android:layout_marginBottom="16dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnPaseoCorto"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Paseo Corto\n(30 min)"
-            android:layout_marginEnd="8dp" />
-
-        <Button
-            android:id="@+id/btnPaseoLargo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Paseo Largo\n(60 min)"
-            android:layout_marginStart="8dp" />
-
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
