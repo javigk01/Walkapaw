@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F7F8FA"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/logoRegister"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/walkapaw_logo"
+        android:contentDescription="Logo Walkapaw"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/textTituloRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Cuenta"
+        android:textSize="20sp"
+        android:textColor="#22223B"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre completo"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/editEmailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo electrónico"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="12dp"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/editPasswordRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_marginBottom="20dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Crear Cuenta"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00BCD4"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnVolverRegister"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:textColor="#4A4E69"
+        android:backgroundTint="#E8E8E8"/>
+
+</LinearLayout>
