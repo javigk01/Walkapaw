@@ -43,7 +43,8 @@ class HomeActivity : AppCompatActivity() {
         frameContent.addView(view)
 
         view.findViewById<Button>(R.id.btnSolicitarPaseo).setOnClickListener {
-            // Lógica para solicitar paseo
+            val intent = Intent(this, PaseoActivity::class.java)
+            startActivity(intent)
         }
 
         view.findViewById<Button>(R.id.btnPaseoCorto).setOnClickListener {
