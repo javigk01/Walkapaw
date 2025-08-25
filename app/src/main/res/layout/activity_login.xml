@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#F7F8FA"
-    android:padding="32dp">
+    android:padding="32dp"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:id="@+id/logoLogin"

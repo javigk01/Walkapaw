@@ -4,13 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/map_placeholder">
+    android:background="@drawable/map_placeholder"
+    android:fitsSystemWindows="false">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:orientation="horizontal"
         android:paddingStart="16dp"
+        android:paddingTop="3dp"
         android:paddingEnd="16dp"
         android:gravity="center_vertical"
         android:background="@color/color_primario">

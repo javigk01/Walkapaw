@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="bottom"
-    android:background="@drawable/map_placeholder">
+    android:background="@drawable/map_placeholder"
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/formCard"
