@@ -1,10 +1,15 @@
 package com.example.walkapaw.LogicaActivities
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.walkapaw.R
@@ -17,13 +22,43 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
+    // 🚀 Launchers
+    private lateinit var cameraLauncher: ActivityResultLauncher<Void?>
+    private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
+
+    // Guardamos la referencia del binding de Cuenta
+    private var cuentaBinding: FragmentCuentaBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupLaunchers()
         setupClickListeners()
         showSolicitarTab()
+    }
+
+    private fun setupLaunchers() {
+        // Launcher para abrir la cámara
+        cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
+            if (bitmap != null) {
+                Toast.makeText(this, "Foto tomada correctamente ✅", Toast.LENGTH_SHORT).show()
+                // 👉 Mostrar la foto en el ImageView del perfil
+                cuentaBinding?.ivPerfilPerro?.setImageBitmap(bitmap)
+            } else {
+                Toast.makeText(this, "No se tomó ninguna foto ❌", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Launcher para pedir permisos
+        requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                openCamera()
+            } else {
+                Toast.makeText(this, "Permiso de cámara denegado ⚠️", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun setupClickListeners() {
@@ -56,32 +91,61 @@ class HomeActivity : AppCompatActivity() {
 
         binding.frameContent.removeAllViews()
         binding.frameContent.addView(actividadBinding.root)
+
+        // ⚠️ Placeholder Toast si en el futuro quieres acciones
+        Toast.makeText(this, "Sección Actividad abierta 📋", Toast.LENGTH_SHORT).show()
     }
 
     private fun showCuentaTab() {
         updateTabSelection(2)
 
-        val cuentaBinding = FragmentCuentaBinding.inflate(
+        cuentaBinding = FragmentCuentaBinding.inflate(
             layoutInflater, binding.frameContent, false
         )
 
         binding.frameContent.removeAllViews()
-        binding.frameContent.addView(cuentaBinding.root)
+        binding.frameContent.addView(cuentaBinding!!.root)
 
-        cuentaBinding.btnEditarPerfil.setOnClickListener {
-            // Falta por implementar
+        cuentaBinding!!.btnTomarFoto.setOnClickListener {
+            checkPermissionAndOpenCamera()
         }
 
-        cuentaBinding.btnConfiguracion.setOnClickListener {
-            // Falta por implementar
+        cuentaBinding!!.btnEditarPerfil.setOnClickListener {
+            Toast.makeText(this, "Editar perfil ⚙️ (en construcción)", Toast.LENGTH_SHORT).show()
         }
 
-        cuentaBinding.btnCerrarSesion.setOnClickListener {
+        cuentaBinding!!.btnConfiguracion.setOnClickListener {
+            Toast.makeText(this, "Configuración ⚙️ (en construcción)", Toast.LENGTH_SHORT).show()
+        }
+
+        cuentaBinding!!.btnCerrarSesion.setOnClickListener {
+            Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             }
             startActivity(intent)
         }
+    }
+
+    // 🚀 Verificar permisos
+    private fun checkPermissionAndOpenCamera() {
+        when {
+            ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED -> {
+                openCamera()
+            }
+            shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) -> {
+                Toast.makeText(this, "Se necesita permiso para usar la cámara 📷", Toast.LENGTH_LONG).show()
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+            }
+            else -> {
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+            }
+        }
+    }
+
+    // 🚀 Abrir cámara
+    private fun openCamera() {
+        cameraLauncher.launch(null)
     }
 
     private fun updateTabSelection(selectedTab: Int) {
