@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
@@ -21,15 +21,17 @@
             android:src="@drawable/ic_walkapawlogo"
             app:tint="@color/blanco"/>
 
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="WalkaPaw"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textColor="@color/blanco"-->
-<!--            android:layout_marginStart="12dp" />-->
+        <!--
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="WalkaPaw"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/blanco"
+            android:layout_marginStart="12dp" />
+        -->
 
     </LinearLayout>
 
@@ -45,6 +47,33 @@
         android:orientation="horizontal"
         android:background="@android:color/white"
         android:elevation="8dp">
+
+        <!-- Nuevo tab: Menú Principal -->
+        <LinearLayout
+            android:id="@+id/tabMenuPrincipal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_menu"
+                app:tint="@color/color_primario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menú"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_primario" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/tabSolicitar"
@@ -89,7 +118,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_history"
-                app:tint = "@color/color_primario"/>
+                app:tint="@color/color_primario"/>
 
             <TextView
                 android:id="@+id/tvActividad"
@@ -117,7 +146,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_account"
-                app:tint = "@color/color_primario"/>
+                app:tint="@color/color_primario"/>
 
             <TextView
                 android:id="@+id/tvCuenta"

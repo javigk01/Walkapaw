@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 🚨 Permisos para la cámara -->
+    <!-- Permisos para la cámara -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
