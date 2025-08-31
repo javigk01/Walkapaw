@@ -93,8 +93,6 @@ class HomeActivity : AppCompatActivity() {
 
         binding.frameContent.removeAllViews()
         binding.frameContent.addView(actividadBinding.root)
-
-        Toast.makeText(this, "Sección Actividad abierta 📋", Toast.LENGTH_SHORT).show()
     }
 
     private fun showCuentaTab() {
