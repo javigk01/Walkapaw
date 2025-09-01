@@ -49,6 +49,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".LogicaActivities.EditarPerfilActivity" />
+
+
     </application>
 
 </manifest>

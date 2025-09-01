@@ -30,6 +30,8 @@ class HomeActivity : AppCompatActivity() {
 
     // Guardamos referencia del binding de Cuenta
     private var cuentaBinding: FragmentCuentaBinding? = null
+    private var selectedTabIndex = 3 // Por defecto inicia en MenuPrincipal
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +44,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupLaunchers() {
-        // Launcher para abrir la cámara
         cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
             if (bitmap != null) {
                 Toast.makeText(this, "Foto tomada correctamente ✅", Toast.LENGTH_SHORT).show()
@@ -52,7 +53,6 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-        // Launcher para pedir permisos
         requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
                 openCamera()
@@ -60,6 +60,10 @@ class HomeActivity : AppCompatActivity() {
                 Toast.makeText(this, "Permiso de cámara denegado ⚠️", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun openCamera() {
+        cameraLauncher.launch(null)
     }
 
     private fun setupClickListeners() {
@@ -97,7 +101,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showCuentaTab() {
         updateTabSelection(2)
-
         cuentaBinding = FragmentCuentaBinding.inflate(
             layoutInflater, binding.frameContent, false
         )
@@ -105,13 +108,29 @@ class HomeActivity : AppCompatActivity() {
         binding.frameContent.removeAllViews()
         binding.frameContent.addView(cuentaBinding!!.root)
 
-        cuentaBinding!!.btnTomarFoto.setOnClickListener { checkPermissionAndOpenCamera() }
-        cuentaBinding!!.btnEditarPerfil.setOnClickListener {
-            Toast.makeText(this, "Editar perfil ⚙️ (en construcción)", Toast.LENGTH_SHORT).show()
+        val sharedPref = getSharedPreferences("perfil_perro", MODE_PRIVATE)
+        val nombre = sharedPref.getString("nombre", "Lucas el perro")
+        val raza = sharedPref.getString("raza", "Criollito")
+        val fotoBase64 = sharedPref.getString("foto", null)
+
+        cuentaBinding!!.tvNombrePerro.text = nombre
+        cuentaBinding!!.tvRazaPerro.text = raza
+
+        fotoBase64?.let {
+            val bytes = android.util.Base64.decode(it, android.util.Base64.DEFAULT)
+            val bitmap = android.graphics.BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+            cuentaBinding!!.ivPerfilPerro.setImageBitmap(bitmap)
         }
+
+        cuentaBinding!!.btnEditarPerfil.setOnClickListener {
+            val intent = Intent(this, EditarPerfilActivity::class.java)
+            startActivity(intent)
+        }
+
         cuentaBinding!!.btnConfiguracion.setOnClickListener {
             Toast.makeText(this, "Configuración ⚙️ (en construcción)", Toast.LENGTH_SHORT).show()
         }
+
         cuentaBinding!!.btnCerrarSesion.setOnClickListener {
             Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java).apply {
@@ -121,8 +140,9 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+
     private fun showMenuPrincipalTab() {
-        updateTabSelection(3) // Es la cuarta pestaña
+        updateTabSelection(3)
 
         val menuPrincipalBinding = FragmentMenuPrincipalBinding.inflate(
             layoutInflater, binding.frameContent, false
@@ -147,29 +167,14 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    // Verificar permisos
-    private fun checkPermissionAndOpenCamera() {
-        when {
-            ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED -> openCamera()
-            shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) -> {
-                Toast.makeText(this, "Se necesita permiso para usar la cámara 📷", Toast.LENGTH_LONG).show()
-                requestPermissionLauncher.launch(Manifest.permission.CAMERA)
-            }
-            else -> requestPermissionLauncher.launch(Manifest.permission.CAMERA)
-        }
-    }
-
-    private fun openCamera() {
-        cameraLauncher.launch(null)
-    }
-
     private fun updateTabSelection(selectedTab: Int) {
+        selectedTabIndex = selectedTab // 🔥 Guardamos el índice de la pestaña activa
         resetTabColors()
         when (selectedTab) {
             0 -> highlightTab(binding.tabSolicitar)
             1 -> highlightTab(binding.tabActividad)
             2 -> highlightTab(binding.tabCuenta)
-            3 -> highlightTab(binding.tabMenuPrincipal) // 🔥 NUEVO
+            3 -> highlightTab(binding.tabMenuPrincipal)
         }
     }
 
@@ -177,7 +182,7 @@ class HomeActivity : AppCompatActivity() {
         setTabColor(binding.tabSolicitar, android.R.color.darker_gray)
         setTabColor(binding.tabActividad, android.R.color.darker_gray)
         setTabColor(binding.tabCuenta, android.R.color.darker_gray)
-        setTabColor(binding.tabMenuPrincipal, android.R.color.darker_gray) // 🔥 NUEVO
+        setTabColor(binding.tabMenuPrincipal, android.R.color.darker_gray)
     }
 
     private fun highlightTab(tab: LinearLayout) {
@@ -191,4 +196,20 @@ class HomeActivity : AppCompatActivity() {
         imageView.setColorFilter(color)
         textView.setTextColor(color)
     }
+
+    override fun onResume() {
+        super.onResume()
+        if (selectedTabIndex == 2) {
+            showCuentaTab() // Recarga los datos guardados
+        }
+    }
+
+    // Método para saber si la pestaña Cuenta está seleccionada
+    private fun isCuentaTabSelected(): Boolean {
+        // Verifica el color/texto del tab seleccionado
+        // O si quieres algo más simple:
+        // Guarda una variable del tab actual
+        return selectedTabIndex == 2
+    }
+
 }
