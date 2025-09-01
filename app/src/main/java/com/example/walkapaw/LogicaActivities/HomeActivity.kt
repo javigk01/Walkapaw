@@ -23,14 +23,11 @@ import com.example.walkapaw.databinding.FragmentMenuPrincipalBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-
-    // Launchers
     private lateinit var cameraLauncher: ActivityResultLauncher<Void?>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
 
-    // Guardamos referencia del binding de Cuenta
     private var cuentaBinding: FragmentCuentaBinding? = null
-    private var selectedTabIndex = 3 // Por defecto inicia en MenuPrincipal
+    private var selectedTabIndex = 3
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -168,7 +165,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun updateTabSelection(selectedTab: Int) {
-        selectedTabIndex = selectedTab // 🔥 Guardamos el índice de la pestaña activa
+        selectedTabIndex = selectedTab
         resetTabColors()
         when (selectedTab) {
             0 -> highlightTab(binding.tabSolicitar)
@@ -202,14 +199,6 @@ class HomeActivity : AppCompatActivity() {
         if (selectedTabIndex == 2) {
             showCuentaTab() // Recarga los datos guardados
         }
-    }
-
-    // Método para saber si la pestaña Cuenta está seleccionada
-    private fun isCuentaTabSelected(): Boolean {
-        // Verifica el color/texto del tab seleccionado
-        // O si quieres algo más simple:
-        // Guarda una variable del tab actual
-        return selectedTabIndex == 2
     }
 
 }

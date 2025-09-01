@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
 import android.widget.Toast
@@ -11,6 +12,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.walkapaw.R
 import com.example.walkapaw.databinding.ActivityEditarPerfilBinding
 import java.io.ByteArrayOutputStream
 
@@ -28,19 +30,32 @@ class EditarPerfilActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("perfil_perro", Context.MODE_PRIVATE)
 
-        // 🔹 Cargar datos previos
+        // Cargar datos previos
         binding.etNombrePerro.setText(sharedPref.getString("nombre", ""))
         binding.etRazaPerro.setText(sharedPref.getString("raza", ""))
 
-        // 🔹 Configurar Launchers
+        // Mostrar foto guardada si existe
+        val fotoBase64 = sharedPref.getString("foto", null)
+        if (!fotoBase64.isNullOrEmpty()) {
+            val bitmap = base64ToBitmap(fotoBase64)
+            binding.ivPerfilPerro.setImageBitmap(bitmap)
+            selectedBitmap = bitmap
+        } else {
+            binding.ivPerfilPerro.setImageResource(R.drawable.dog_placeholder)
+        }
+
         setupCameraLaunchers()
 
-        // 🔹 Botón tomar foto
         binding.btnTomarFoto.setOnClickListener {
             checkPermissionAndOpenCamera()
         }
 
-        // 🔹 Botón guardar
+        binding.btnEliminarFoto.setOnClickListener {
+            selectedBitmap = null
+            binding.ivPerfilPerro.setImageResource(R.drawable.dog_placeholder)
+            Toast.makeText(this, "Foto eliminada 🗑️", Toast.LENGTH_SHORT).show()
+        }
+
         binding.btnGuardar.setOnClickListener {
             val nombre = binding.etNombrePerro.text.toString().trim()
             val raza = binding.etRazaPerro.text.toString().trim()
@@ -52,9 +67,10 @@ class EditarPerfilActivity : AppCompatActivity() {
                     putString("nombre", nombre)
                     putString("raza", raza)
 
-                    // Guardar foto si se tomó
-                    selectedBitmap?.let { bitmap ->
-                        putString("foto", bitmapToBase64(bitmap))
+                    if (selectedBitmap != null) {
+                        putString("foto", bitmapToBase64(selectedBitmap!!))
+                    } else {
+                        remove("foto") // 🔹 Si no hay foto, eliminamos la clave
                     }
 
                     apply()
@@ -102,5 +118,10 @@ class EditarPerfilActivity : AppCompatActivity() {
         val outputStream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
         return Base64.encodeToString(outputStream.toByteArray(), Base64.DEFAULT)
+    }
+
+    private fun base64ToBitmap(base64: String): Bitmap {
+        val decodedBytes = Base64.decode(base64, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
     }
 }

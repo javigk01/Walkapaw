@@ -22,8 +22,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Tomar Foto"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="@color/color_primario" />
+
+        <Button
+            android:id="@+id/btnEliminarFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Eliminar Foto"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/holo_red_light" />
 
         <EditText
             android:id="@+id/etNombrePerro"
