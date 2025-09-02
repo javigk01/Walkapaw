@@ -1,17 +1,16 @@
-package com.example.walkapaw.LogicaActivities
+package com.example.walkapaw.logic
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.walkapaw.databinding.ActivityMainBinding
+import com.example.walkapaw.databinding.ActivityLoginAndRegisterBinding
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class LoginAndRegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginAndRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityLoginAndRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.btnIniciarSesion.setOnClickListener {

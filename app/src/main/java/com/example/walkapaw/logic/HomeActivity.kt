@@ -1,4 +1,4 @@
-package com.example.walkapaw.LogicaActivities
+package com.example.walkapaw.logic
 
 import android.Manifest
 import android.content.Intent
@@ -178,7 +178,7 @@ class HomeActivity : AppCompatActivity() {
 
         cuentaBinding!!.btnCerrarSesion.setOnClickListener {
             Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainActivity::class.java).apply {
+            val intent = Intent(this, LoginAndRegisterActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             }
             startActivity(intent)

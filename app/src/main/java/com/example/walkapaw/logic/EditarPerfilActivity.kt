@@ -1,4 +1,4 @@
-package com.example.walkapaw.LogicaActivities
+package com.example.walkapaw.logic
 
 import android.Manifest
 import android.content.Context

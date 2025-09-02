@@ -33,23 +33,23 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".LogicaActivities.PaseoActivity"
+            android:name=".logic.PaseoActivity"
             android:exported="false" />
 
         <activity
-            android:name=".LogicaActivities.HomeActivity"
+            android:name=".logic.HomeActivity"
             android:exported="false" />
 
         <activity
-            android:name=".LogicaActivities.RegisterActivity"
+            android:name=".logic.RegisterActivity"
             android:exported="false" />
 
         <activity
-            android:name=".LogicaActivities.LoginActivity"
+            android:name=".logic.LoginActivity"
             android:exported="false" />
 
         <activity
-            android:name=".LogicaActivities.MainActivity"
+            android:name=".logic.LoginAndRegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,7 +57,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LogicaActivities.EditarPerfilActivity" />
+        <activity android:name=".logic.EditarPerfilActivity" />
 
 
     </application>

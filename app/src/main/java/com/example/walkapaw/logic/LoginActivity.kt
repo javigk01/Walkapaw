@@ -1,4 +1,4 @@
-package com.example.walkapaw.LogicaActivities
+package com.example.walkapaw.logic
 
 import android.content.Intent
 import android.os.Bundle
