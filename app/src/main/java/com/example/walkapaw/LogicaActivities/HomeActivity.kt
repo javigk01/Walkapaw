@@ -43,10 +43,10 @@ class HomeActivity : AppCompatActivity() {
     private fun setupLaunchers() {
         cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
             if (bitmap != null) {
-                Toast.makeText(this, "Foto tomada correctamente ✅", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Foto tomada correctamente", Toast.LENGTH_SHORT).show()
                 cuentaBinding?.ivPerfilPerro?.setImageBitmap(bitmap)
             } else {
-                Toast.makeText(this, "No se tomó ninguna foto ❌", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No se tomó ninguna foto", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -54,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
             if (isGranted) {
                 openCamera()
             } else {
-                Toast.makeText(this, "Permiso de cámara denegado ⚠️", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permiso de cámara denegado ", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -125,7 +125,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         cuentaBinding!!.btnConfiguracion.setOnClickListener {
-            Toast.makeText(this, "Configuración ⚙️ (en construcción)", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Configuración (en construcción)", Toast.LENGTH_SHORT).show()
         }
 
         cuentaBinding!!.btnCerrarSesion.setOnClickListener {

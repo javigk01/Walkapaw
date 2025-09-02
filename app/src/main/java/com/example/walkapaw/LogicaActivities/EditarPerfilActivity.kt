@@ -30,11 +30,11 @@ class EditarPerfilActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("perfil_perro", Context.MODE_PRIVATE)
 
-        // Cargar datos previos
+        // Cargamos datos previos
         binding.etNombrePerro.setText(sharedPref.getString("nombre", ""))
         binding.etRazaPerro.setText(sharedPref.getString("raza", ""))
 
-        // Mostrar foto guardada si existe
+        // Mostramos foto guardada si existe
         val fotoBase64 = sharedPref.getString("foto", null)
         if (!fotoBase64.isNullOrEmpty()) {
             val bitmap = base64ToBitmap(fotoBase64)
@@ -53,7 +53,7 @@ class EditarPerfilActivity : AppCompatActivity() {
         binding.btnEliminarFoto.setOnClickListener {
             selectedBitmap = null
             binding.ivPerfilPerro.setImageResource(R.drawable.dog_placeholder)
-            Toast.makeText(this, "Foto eliminada 🗑️", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Foto eliminada", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnGuardar.setOnClickListener {
@@ -70,12 +70,12 @@ class EditarPerfilActivity : AppCompatActivity() {
                     if (selectedBitmap != null) {
                         putString("foto", bitmapToBase64(selectedBitmap!!))
                     } else {
-                        remove("foto") // 🔹 Si no hay foto, eliminamos la clave
+                        remove("foto") //Si no hay foto eliminamos la key
                     }
 
                     apply()
                 }
-                Toast.makeText(this, "Perfil guardado ✅", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Perfil guardado", Toast.LENGTH_SHORT).show()
                 finish()
             }
         }
@@ -86,7 +86,7 @@ class EditarPerfilActivity : AppCompatActivity() {
             if (bitmap != null) {
                 selectedBitmap = bitmap
                 binding.ivPerfilPerro.setImageBitmap(bitmap)
-                Toast.makeText(this, "Foto tomada ✅", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Foto tomada", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -94,7 +94,7 @@ class EditarPerfilActivity : AppCompatActivity() {
             if (isGranted) {
                 openCamera()
             } else {
-                Toast.makeText(this, "Permiso de cámara denegado ⚠️", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -103,7 +103,7 @@ class EditarPerfilActivity : AppCompatActivity() {
         when {
             ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED -> openCamera()
             shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) -> {
-                Toast.makeText(this, "Se necesita permiso para usar la cámara 📷", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Se necesita permiso para usar la cámara", Toast.LENGTH_LONG).show()
                 requestPermissionLauncher.launch(Manifest.permission.CAMERA)
             }
             else -> requestPermissionLauncher.launch(Manifest.permission.CAMERA)
