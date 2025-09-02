@@ -3,6 +3,9 @@ package com.example.walkapaw.LogicaActivities
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ImageView
@@ -25,6 +28,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var cameraLauncher: ActivityResultLauncher<Void?>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
+    private lateinit var galleryLauncher: ActivityResultLauncher<String>
+    private lateinit var requestGalleryPermissionLauncher: ActivityResultLauncher<String>
 
     private var cuentaBinding: FragmentCuentaBinding? = null
     private var selectedTabIndex = 3
@@ -57,10 +62,35 @@ class HomeActivity : AppCompatActivity() {
                 Toast.makeText(this, "Permiso de cámara denegado ", Toast.LENGTH_SHORT).show()
             }
         }
+
+        // Lanzador para abrir galería
+        galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            if (uri != null) {
+                val inputStream = contentResolver.openInputStream(uri)
+                val bitmap = BitmapFactory.decodeStream(inputStream)
+                cuentaBinding?.ivPerfilPerro?.setImageBitmap(bitmap)
+                Toast.makeText(this, "Imagen seleccionada de galería", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "No seleccionaste ninguna imagen", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Permiso para galería
+        requestGalleryPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
+                openGallery()
+            } else {
+                Toast.makeText(this, "Permiso de galería denegado", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun openCamera() {
         cameraLauncher.launch(null)
+    }
+
+    private fun openGallery() {
+        galleryLauncher.launch("image/*")
     }
 
     private fun setupClickListeners() {
@@ -117,6 +147,24 @@ class HomeActivity : AppCompatActivity() {
             val bytes = android.util.Base64.decode(it, android.util.Base64.DEFAULT)
             val bitmap = android.graphics.BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
             cuentaBinding!!.ivPerfilPerro.setImageBitmap(bitmap)
+        }
+
+        // Botón para abrir galería
+        cuentaBinding!!.btnSubirFoto.setOnClickListener {
+            val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                Manifest.permission.READ_MEDIA_IMAGES
+            } else {
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            }
+
+            when {
+                ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED -> {
+                    openGallery()
+                }
+                else -> {
+                    requestGalleryPermissionLauncher.launch(permission)
+                }
+            }
         }
 
         cuentaBinding!!.btnEditarPerfil.setOnClickListener {

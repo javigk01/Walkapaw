@@ -18,6 +18,16 @@
             android:layout_gravity="center"
             android:layout_marginBottom="8dp" />
 
+        <!-- Botón para subir foto -->
+        <Button
+            android:id="@+id/btnSubirFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subir Foto"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/color_primario"/>
+
         <TextView
             android:id="@+id/tvNombrePerro"
             android:layout_width="wrap_content"
