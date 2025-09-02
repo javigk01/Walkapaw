@@ -28,13 +28,14 @@ class EditarPerfilActivity : AppCompatActivity() {
         binding = ActivityEditarPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = "Editar perfil"
+
         val sharedPref = getSharedPreferences("perfil_perro", Context.MODE_PRIVATE)
 
-        // Cargamos datos previos
         binding.etNombrePerro.setText(sharedPref.getString("nombre", ""))
         binding.etRazaPerro.setText(sharedPref.getString("raza", ""))
 
-        // Mostramos foto guardada si existe
         val fotoBase64 = sharedPref.getString("foto", null)
         if (!fotoBase64.isNullOrEmpty()) {
             val bitmap = base64ToBitmap(fotoBase64)
@@ -46,9 +47,7 @@ class EditarPerfilActivity : AppCompatActivity() {
 
         setupCameraLaunchers()
 
-        binding.btnTomarFoto.setOnClickListener {
-            checkPermissionAndOpenCamera()
-        }
+        binding.btnTomarFoto.setOnClickListener { checkPermissionAndOpenCamera() }
 
         binding.btnEliminarFoto.setOnClickListener {
             selectedBitmap = null
@@ -66,13 +65,8 @@ class EditarPerfilActivity : AppCompatActivity() {
                 sharedPref.edit().apply {
                     putString("nombre", nombre)
                     putString("raza", raza)
-
-                    if (selectedBitmap != null) {
-                        putString("foto", bitmapToBase64(selectedBitmap!!))
-                    } else {
-                        remove("foto") //Si no hay foto eliminamos la key
-                    }
-
+                    if (selectedBitmap != null) putString("foto", bitmapToBase64(selectedBitmap!!))
+                    else remove("foto")
                     apply()
                 }
                 Toast.makeText(this, "Perfil guardado", Toast.LENGTH_SHORT).show()
@@ -91,11 +85,7 @@ class EditarPerfilActivity : AppCompatActivity() {
         }
 
         requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            if (isGranted) {
-                openCamera()
-            } else {
-                Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show()
-            }
+            if (isGranted) openCamera() else Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -110,18 +100,19 @@ class EditarPerfilActivity : AppCompatActivity() {
         }
     }
 
-    private fun openCamera() {
-        cameraLauncher.launch(null)
-    }
+    private fun openCamera() = cameraLauncher.launch(null)
 
     private fun bitmapToBase64(bitmap: Bitmap): String {
-        val outputStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-        return Base64.encodeToString(outputStream.toByteArray(), Base64.DEFAULT)
+        val out = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
+        return Base64.encodeToString(out.toByteArray(), Base64.DEFAULT)
     }
 
-    private fun base64ToBitmap(base64: String): Bitmap {
-        val decodedBytes = Base64.decode(base64, Base64.DEFAULT)
-        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+    private fun base64ToBitmap(base64: String) =
+        BitmapFactory.decodeByteArray(Base64.decode(base64, Base64.DEFAULT), 0, Base64.decode(base64, Base64.DEFAULT).size)
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,145 +21,141 @@
             android:layout_height="40dp"
             android:src="@drawable/ic_walkapawlogo"
             app:tint="@color/blanco"/>
-
-        <!--
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="WalkaPaw"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/blanco"
-            android:layout_marginStart="12dp" />
-        -->
-
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frameContent"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
+    <!-- Grid 2x2 de navegación -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:background="@android:color/white"
-        android:elevation="8dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
 
-        <!-- Nuevo tab: Menú Principal -->
         <LinearLayout
-            android:id="@+id/tabMenuPrincipal"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
+            android:weightSum="2"
+            android:layout_marginBottom="16dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_menu"
-                app:tint="@color/color_primario" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardMenu"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_menu"
+                        app:tint="@color/color_primario"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Menú"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Menú"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/color_primario" />
-
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSolicitar"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_walk"
+                        app:tint="@color/color_primario"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Solicitar"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/tabSolicitar"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
+            android:weightSum="2">
 
-            <ImageView
-                android:id="@+id/ivSolicitar"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_walk"
-                app:tint="@color/color_primario"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardActividad"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="@color/color_primario"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Actividad"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/tvSolicitar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Solicitar"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/color_primario"/>
-
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCuenta"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_account"
+                        app:tint="@color/color_primario"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cuenta"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tabActividad"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <ImageView
-                android:id="@+id/ivActividad"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_history"
-                app:tint="@color/color_primario"/>
-
-            <TextView
-                android:id="@+id/tvActividad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Actividad"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/color_primario"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/tabCuenta"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <ImageView
-                android:id="@+id/ivCuenta"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_account"
-                app:tint="@color/color_primario"/>
-
-            <TextView
-                android:id="@+id/tvCuenta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cuenta"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/color_primario"/>
-
-        </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
+
