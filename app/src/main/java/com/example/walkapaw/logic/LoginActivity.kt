@@ -19,6 +19,11 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.btnLoginPaseador.setOnClickListener {
+            startActivity(Intent(this, PaseadorHomeActivity::class.java))
+            finish()
+        }
+
         binding.btnVolver.setOnClickListener {
             finish()
         }

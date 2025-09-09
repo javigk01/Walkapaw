@@ -53,6 +53,15 @@
         android:layout_marginBottom="12dp"/>
 
     <Button
+        android:id="@+id/btnLoginPaseador"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Entrar como paseador"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/color_secundario"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
         android:id="@+id/btnVolver"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

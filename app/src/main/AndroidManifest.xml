@@ -2,18 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Cámara opcional -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
 
-    <!-- Permisos: Android 10/11 -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <!-- WRITE solo hasta Android 9 (28). En 10+ aplica Scoped Storage -->
+
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
-    <!-- READ para galería hasta Android 12L (32). Cubre 10/11 -->
+
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -29,7 +27,6 @@
         android:theme="@style/Theme.Walkapaw"
         tools:targetApi="31">
 
-        <!-- Lanzador -->
         <activity
             android:name=".logic.LoginAndRegisterActivity"
             android:exported="true">
@@ -39,12 +36,14 @@
             </intent-filter>
         </activity>
 
-        <!-- Navegación principal -->
         <activity
             android:name=".logic.HomeActivity"
             android:exported="false" />
 
-        <!-- Secciones migradas de fragments a activities -->
+        <activity
+            android:name=".logic.PaseadorHomeActivity"
+            android:exported="false" />
+
         <activity
             android:name=".logic.MenuActivity"
             android:exported="false"
@@ -62,13 +61,11 @@
             android:exported="false"
             android:parentActivityName=".logic.HomeActivity" />
 
-        <!-- Edición de perfil: botón Up vuelve a Cuenta -->
         <activity
             android:name=".logic.EditarPerfilActivity"
             android:exported="false"
             android:parentActivityName=".logic.CuentaActivity" />
 
-        <!-- Otras pantallas que ya tenías -->
         <activity
             android:name=".logic.LoginActivity"
             android:exported="false" />
@@ -78,6 +75,7 @@
         <activity
             android:name=".logic.PaseoActivity"
             android:exported="false" />
+
     </application>
 </manifest>
 
